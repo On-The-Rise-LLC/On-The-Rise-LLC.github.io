@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.2.8"
+    "@fontsource/roboto": "^5.0.8",
+    "astro": "^4.2.8",
+    "astro-icon": "^1.1.0"
+  },
+  "devDependencies": {
+    "@iconify-json/fa6-brands": "^1.1.18"
   }
 }

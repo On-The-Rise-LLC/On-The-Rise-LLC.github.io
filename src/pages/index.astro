@@ -1,7 +1,10 @@
 ---
-import { Image, getImage } from "astro:assets";
+import { Picture } from "astro:assets";
 import logoImg from "../images/on-the-rise-foundation-logo.png";
+import "@fontsource/roboto";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
 
 ---
 
@@ -14,16 +17,23 @@ import "../styles/global.css";
 		<title>On the Rise Foundation - Fall into your new begining</title>
 	</head>
 	<body>
-		<main>
+		<header>
 			<div class="hero">
-				<Image src={logoImg} alt="On the Rise Foundation logo" />
+				<Picture
+					src={logoImg}
+					widths={[260, 300, 325, logoImg.width]}
+					sizes={`(max-width: 320px) 260px, (max-width: 345px) 300px, (max-width: 370px) 325px, ${logoImg.width}px`}
+					alt="On the Rise Foundation logo - Fall into Your New Beginning"
+				/>
 
 				<div class="mission-statement">
 					<h2>Mission Statement</h2>
 					<p>Our mission is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
+					<a class="btn" href="#stay-up-to-date">Stay up to Date on Our Launch</a>
 				</div>
 			</div>
-
+		</header>
+		<main>
 			<h2>About us</h2>
 			<p>On The Rise Foundation was created by founders Angela and Jonas Allen to help the local King/Snohomish and Pierce Counties to help advocate for individuals' rights to evaluations, promote inclusion, and foster a supportive community, aiming to create an inclusive society where every family has access to the necessary tools and accommodations needed to thrive academically and professionally. Together, we strive to remove barriers, enhance accessibility, and promote equal opportunities for individuals of all abilities.</p>
 
@@ -31,12 +41,21 @@ import "../styles/global.css";
 
 			<p>On The Rise hopes to assist with consultation, outreach and financial assistance for individuals and families who are not able to receive evaluations or support due to financial or insurance requirements.</p>
 
-			<h2>Stay up to Date on Our Launch</h2>
+			<h2 id="stay-up-to-date">Stay up to Date on Our Launch</h2>
 			<script type="text/javascript" src="https://opnform.com/widgets/iframeResize.min.js"></script>
-			<iframe style="border:none;width:100%;" id="form-stay-updated-with-our-non-profit-organization-djanwk" src="https://opnform.com/forms/stay-updated-with-our-non-profit-organization-djanwk"></iframe>
+			<iframe title="Stay Up To Date On Our Launch" style="border:none;width:100%;" id="form-stay-updated-with-our-non-profit-organization-djanwk" src="https://opnform.com/forms/stay-updated-with-our-non-profit-organization-djanwk"></iframe>
 			<script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#form-stay-updated-with-our-non-profit-organization-djanwk");</script>
-	
-			
 		</main>
+		<footer>
+			<a href="https://www.facebook.com/ontherisefoundation2024">
+				<Icon name="fa6-brands:facebook" size="5rem" />
+			</a>
+			<!-- <a href="">
+				<Icon name="fa6-brands:instagram" size="5rem" />
+			</a> -->
+			<a href="https://www.tiktok.com/@ontherisefoundation">
+				<Icon name="fa6-brands:tiktok" size="5rem" />
+			</a>
+		</footer>
 	</body>
 </html>
