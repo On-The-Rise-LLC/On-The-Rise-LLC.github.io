@@ -17,6 +17,10 @@ import type { HTMLAttributes } from "astro/types";
 		<title>On the Rise Foundation - Fall into your new beginning</title>
 	</head>
 	<body>
+		<a href="#mission-statement" class="skip-links">Skip to mission statement</a>
+		<a href="#main" class="skip-links">Skip to about us</a>
+		<a href="#footer" class="skip-links">Skip to stay up to date on our launch</a>
+		<a href="#footer" class="skip-links">Skip to social media links</a>
 		<header>
 			<div class="hero">
 				<Picture
@@ -26,14 +30,14 @@ import type { HTMLAttributes } from "astro/types";
 					alt="On the Rise Foundation logo - Fall into Your New Beginning"
 				/>
 
-				<div class="mission-statement">
+				<div id="mission-statement">
 					<h2>Mission Statement</h2>
 					<p>Our mission is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
 					<a class="btn" href="#stay-up-to-date">Stay up to Date on Our Launch</a>
 				</div>
 			</div>
 		</header>
-		<main>
+		<main id="main">
 			<h2>About us</h2>
 			<p>On The Rise Foundation was created by founders Angela and Jonas Allen to help the local King/Snohomish and Pierce Counties to help advocate for individuals' rights to evaluations, promote inclusion, and foster a supportive community, aiming to create an inclusive society where every family has access to the necessary tools and accommodations needed to thrive academically and professionally. Together, we strive to remove barriers, enhance accessibility, and promote equal opportunities for individuals of all abilities.</p>
 
@@ -46,14 +50,14 @@ import type { HTMLAttributes } from "astro/types";
 			<iframe title="Stay Up To Date On Our Launch" style="border:none;width:100%;" id="form-stay-updated-with-our-non-profit-organization-djanwk" src="https://opnform.com/forms/stay-updated-with-our-non-profit-organization-djanwk"></iframe>
 			<script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#form-stay-updated-with-our-non-profit-organization-djanwk");</script>
 		</main>
-		<footer>
-			<a href="https://www.facebook.com/ontherisefoundation2024">
+		<footer id="footer">
+			<a href="https://www.facebook.com/ontherisefoundation2024" aria-label="Facebook profile" target="_blank">
 				<Icon name="fa6-brands:facebook" size="5rem" />
 			</a>
 			<!-- <a href="">
 				<Icon name="fa6-brands:instagram" size="5rem" />
 			</a> -->
-			<a href="https://www.tiktok.com/@ontherisefoundation">
+			<a href="https://www.tiktok.com/@ontherisefoundation" aria-label="TikTok profile" target="_blank">
 				<Icon name="fa6-brands:tiktok" size="5rem" />
 			</a>
 		</footer>
