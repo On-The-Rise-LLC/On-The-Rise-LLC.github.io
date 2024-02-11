@@ -10,9 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.0.5",
     "@fontsource/roboto": "^5.0.8",
     "astro": "^4.2.8",
-    "astro-icon": "^1.1.0"
+    "astro-icon": "^1.1.0",
+    "astro-robots-txt": "^1.0.0"
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.1.18"
