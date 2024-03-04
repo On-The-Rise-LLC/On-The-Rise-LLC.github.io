@@ -95,7 +95,7 @@ header .hero {
 main {
     padding: 1rem;
 }
-footer {
+footer .social-wrap {
     display: flex;
     justify-content: center;
     gap: 4rem;

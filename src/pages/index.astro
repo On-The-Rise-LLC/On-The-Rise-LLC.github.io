@@ -4,7 +4,7 @@ import logoImg from "../images/on-the-rise-foundation-logo.png";
 import "@fontsource/roboto";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
-import type { HTMLAttributes } from "astro/types";
+import SocialIcons from "../components/SocialIcons.astro";
 
 ---
 
@@ -59,15 +59,7 @@ import type { HTMLAttributes } from "astro/types";
 			<script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#form-stay-updated-with-our-non-profit-organization-djanwk");</script>
 		</main>
 		<footer id="footer">
-			<a href="https://www.facebook.com/ontherisefoundation2024" aria-label="Facebook profile" target="_blank">
-				<Icon name="fa6-brands:facebook" size="5rem" />
-			</a>
-			<!-- <a href="">
-				<Icon name="fa6-brands:instagram" size="5rem" />
-			</a> -->
-			<a href="https://www.tiktok.com/@ontherisefoundation" aria-label="TikTok profile" target="_blank">
-				<Icon name="fa6-brands:tiktok" size="5rem" />
-			</a>
+			<SocialIcons />
 		</footer>
 	</body>
 </html>

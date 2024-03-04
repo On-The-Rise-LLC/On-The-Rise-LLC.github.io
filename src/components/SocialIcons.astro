@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialList = [
+    {
+        href: "https://www.facebook.com/ontherisefoundation2024",
+        ariaLabel: "Facebook profile",
+        name: "fa6-brands:facebook"
+    },
+    {
+        href: "https://www.tiktok.com/@ontherisefoundation",
+        ariaLabel: "Instagram profile",
+        name: "fa6-brands:instagram"
+    }
+];
+
+const iconSize = "3rem";
+---
+<div class="social-wrap">
+    {socialList.map(social => ((
+        <a href={social.href} aria-label={social.ariaLabel} target="_blank">
+            <Icon name={social.name} size={iconSize} />    
+        </a>
+    )))}
+</div>
+
+<style>
+    
+</style>
