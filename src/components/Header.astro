@@ -23,5 +23,23 @@ import logoImg from "../images/on-the-rise-foundation-logo.png";
 </header>
 
 <style>
-    
+    header {
+        
+    }
+    header .hero {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    @media (min-width: 800px) {
+        header .hero {
+            max-width: 1440px;
+            flex-direction: row;
+            gap: 4rem;
+        }
+    }
 </style>

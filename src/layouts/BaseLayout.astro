@@ -1,6 +1,5 @@
 ---
 import "@fontsource/roboto";
-import "../styles/global.css";
 import Head from "../components/Head.astro";
 import SkipLinks from "../components/SkipLinks.astro";
 import Header from "../components/Header.astro";
@@ -10,7 +9,9 @@ import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 
 const foregroundColor = "";
-const backgroundColor = "";
+const backgroundColor = "rgb(255, 255, 255)";
+const secoundaryBackgroundColor = "#ff9f00";
+const ctaColor = "rgb(137, 54, 54)";
 ---
 
 <html lang="en">
@@ -25,6 +26,85 @@ const backgroundColor = "";
     </body>
 </html>
 
-<style is:global define:vars={{ foregroundColor, backgroundColor }}>
-
+<style is:global define:vars={{ foregroundColor, backgroundColor, secoundaryBackgroundColor, ctaColor }}>
+    /*
+    Black #020202
+    White #FFF
+    Yellow #FFB020
+    Orange #ff9f00
+    Red #BD5858
+    */
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Roboto', sans-serif;
+    }
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    iframe {
+        max-width: 34rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .btn {
+        text-transform: capitalize;
+    }
+    .btn {
+        background-color: var(--ctaColor);
+        color: var(--backgroundColor);
+        --tw-ring-color: var(--ctaColor);
+        transition-timing-function: cubic-bezier(.4,0,1,1);
+        transition-duration: .2s;
+        --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+        --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        margin-right: 0.25rem;
+        margin-left: 0.25rem;
+        text-transform: none;
+        text-decoration: none;
+    }
+    a {
+        color: var(--ctaColor);
+    }
+    header,
+    footer {
+        background-color: var(--secoundaryBackgroundColor);
+        padding: 2rem 1rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    @media (min-width: 800px) {
+        header,
+        footer {
+            padding: 4rem;
+        }
+        main {
+            max-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 </style>

@@ -8,5 +8,20 @@
 <a href="#footer" class="skip-links">Skip to social media links</a>
 
 <style>
-
+    .skip-links {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        background-color: rgb(137, 54, 54);
+        color: rgb(255, 255, 255);
+    }
+    .skip-links:focus {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 </style>
