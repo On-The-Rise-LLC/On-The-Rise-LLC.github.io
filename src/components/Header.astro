@@ -6,18 +6,20 @@ import logoImg from "../images/on-the-rise-foundation-logo.png";
 <header>
     <div class="hero">
         <h1>
-            <Picture
-                src={logoImg}
-                widths={[260, 300, 325, logoImg.width]}
-                sizes={`(max-width: 320px) 260px, (max-width: 345px) 300px, (max-width: 370px) 325px, ${logoImg.width}px`}
-                alt="On the Rise Foundation Fall into Your New Beginning"
-            />
+            <a href="/">
+                <Picture
+                    src={logoImg}
+                    widths={[260, 300, 325, logoImg.width]}
+                    sizes={`(max-width: 320px) 260px, (max-width: 345px) 300px, (max-width: 370px) 325px, ${logoImg.width}px`}
+                    alt="On the Rise Foundation Fall into Your New Beginning"
+                />
+            </a>
         </h1>
 
         <div id="mission-statement">
             <h2>Our Mission</h2>
             <p>Is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
-            <a class="btn" href="#stay-up-to-date">Stay Up To Date On Our Launch</a>
+            <a class="btn" href="/donate">Donate To Our Mission</a>
         </div>
     </div>
 </header>
