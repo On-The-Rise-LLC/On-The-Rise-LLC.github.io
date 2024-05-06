@@ -7,11 +7,6 @@ import Footer from "../components/Footer.astro";
 
 
 const { title } = Astro.props;
-
-const foregroundColor = "";
-const backgroundColor = "rgb(255, 255, 255)";
-const secoundaryBackgroundColor = "#ff9f00";
-const ctaColor = "rgb(137, 54, 54)";
 ---
 
 <html lang="en">
@@ -26,7 +21,7 @@ const ctaColor = "rgb(137, 54, 54)";
     </body>
 </html>
 
-<style is:global define:vars={{ foregroundColor, backgroundColor, secoundaryBackgroundColor, ctaColor }}>
+<style is:global>
     /*
     Black #020202
     White #FFF
@@ -34,7 +29,7 @@ const ctaColor = "rgb(137, 54, 54)";
     Orange #ff9f00
     Red #BD5858
     */
-    html {
+    /* html {
         scroll-behavior: smooth;
     }
     body {
@@ -93,11 +88,6 @@ const ctaColor = "rgb(137, 54, 54)";
     a {
         color: var(--ctaColor);
     }
-    header,
-    footer {
-        background-color: var(--secoundaryBackgroundColor);
-        padding: 2rem 1rem;
-    }
     main {
         padding: 1rem;
     }
@@ -111,5 +101,5 @@ const ctaColor = "rgb(137, 54, 54)";
             margin-left: auto;
             margin-right: auto;
         }
-    }
+    } */
 </style>
