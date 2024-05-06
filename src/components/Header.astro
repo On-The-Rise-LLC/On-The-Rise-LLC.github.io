@@ -3,7 +3,7 @@ import { Picture } from "astro:assets";
 import logoImg from "../images/on-the-rise-foundation-logo.png";
 ---
 
-<header>
+<header id="header">
     <div class="hero">
         <h1>
             <a href="/">
@@ -25,8 +25,9 @@ import logoImg from "../images/on-the-rise-foundation-logo.png";
 </header>
 
 <style>
-    header {
-        
+    #header {
+        background-color: var(--secoundary-background-color);
+        padding: var(--header-footer-padding);
     }
     header .hero {
         margin-left: auto;
@@ -35,13 +36,13 @@ import logoImg from "../images/on-the-rise-foundation-logo.png";
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: var(--spacing-md);
     }
     @media (min-width: 800px) {
         header .hero {
-            max-width: 1440px;
+            max-width: var(--page-width);
             flex-direction: row;
-            gap: 4rem;
+            gap: var(--spacing-xl);
         }
     }
 </style>

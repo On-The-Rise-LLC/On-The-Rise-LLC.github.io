@@ -23,34 +23,47 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-    /*
-    Black #020202
-    White #FFF
-    Yellow #FFB020
-    Orange #ff9f00
-    Red #BD5858
-    */
-    /* html {
+
+    :root {
+        --content-width: 34rem;
+        --page-width: 1440px;
+
+        --foreground-color: #020202;
+        --background-color: rgb(255, 255, 255);
+        --secoundary-background-color: #ff9f00;
+        --cta-color: rgb(137, 54, 54);
+
+        --spacing-xs: 0.25rem;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 4rem;
+
+        --font-size-sm: 0.75rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.25rem;
+
+        --h1: 3rem;
+        --h2: 2.5rem;
+        --h3: 2rem;
+        --h4: 1.5ren;
+        --h5: 1.25rem;
+        --h6: 1.15rem;
+
+        --header-footer-padding: var(--spacing-lg) var(--spacing-md);
+        
+        --border-radius: 0.5rem;
+    }
+    html {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        font-size: 17px;
         scroll-behavior: smooth;
     }
-    body {
-        padding: 0px;
-        margin: 0px;
-        font-family: 'Roboto', sans-serif;
-    }
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    iframe,
-    .contained,
-    li {
-        max-width: 34rem;
+    #main {
+        max-width: var(--content-width);
         margin-left: auto;
         margin-right: auto;
+        padding: 1rem;
         display: block;
     }
     h1,
@@ -63,23 +76,23 @@ const { title } = Astro.props;
         text-transform: capitalize;
     }
     .btn {
-        background-color: var(--ctaColor);
-        color: var(--backgroundColor);
-        --tw-ring-color: var(--ctaColor);
+        background-color: var(--cta-color);
+        color: var(--background-color);
+        --tw-ring-color: var(--cta-color);
         transition-timing-function: cubic-bezier(.4,0,1,1);
         transition-duration: .2s;
         --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
         --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
         font-weight: 600;
-        font-size: 1rem;
+        font-size: var(--font-size-md);
         line-height: 1.5rem;
         text-align: center;
-        padding: 0.5rem 2rem;
-        border-radius: 0.5rem;
-        margin-top: 0.5rem;
-        margin-right: 0.25rem;
-        margin-left: 0.25rem;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border-radius: var(--border-radius);
+        margin-top: var(--spacing-sm);
+        margin-right: var(--spacing-xs);
+        margin-left: var(--spacing-xs);
         text-transform: none;
         text-decoration: none;
     }
@@ -87,20 +100,23 @@ const { title } = Astro.props;
         display: block;
     }
     a {
-        color: var(--ctaColor);
+        color: var(--cta-color);
     }
-    main {
-        padding: 1rem;
+    @media (max-width: 900px) {
+        html { 
+            font-size: 15px; 
+        }
     }
-    @media (min-width: 800px) {
-        header,
-        footer {
-            padding: 4rem;
+    @media (max-width: 400px) {
+        html { 
+            font-size: 13px; 
         }
-        main {
-            max-width: 1440px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    } */
+    }
+    /*
+    Black #020202
+    White #FFF
+    Yellow #FFB020
+    Orange #ff9f00
+    Red #BD5858
+    */
 </style>
