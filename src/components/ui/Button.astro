@@ -1,0 +1,43 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<"a"> {
+    variant?: "primary" | "wide";
+}
+
+const { href, variant = "primary", ...rest } = Astro.props;
+---
+
+<a href={href} class:list={["btn", variant]} {...rest}>
+    <slot />
+</a>
+
+<style>
+    .btn {
+        text-transform: capitalize;
+    }
+    .btn {
+        background-color: var(--cta-color);
+        color: var(--background-color);
+        --tw-ring-color: var(--cta-color);
+        transition-timing-function: cubic-bezier(.4,0,1,1);
+        transition-duration: .2s;
+        --tw-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+        --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+        font-weight: 600;
+        font-size: var(--font-size-md);
+        line-height: 1.5rem;
+        text-align: center;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border-radius: var(--border-radius);
+        margin-top: var(--spacing-sm);
+        margin-right: var(--spacing-xs);
+        margin-left: var(--spacing-xs);
+        text-transform: none;
+        text-decoration: none;
+    }
+    .btn.wide {
+        display: block;
+    }
+</style>
