@@ -2,6 +2,7 @@
 import { Picture } from "astro:assets";
 import logoImg from "../../images/on-the-rise-foundation-logo.png";
 import Button from "../ui/Button.astro";
+import Heading from "../ui/Heading.astro";
 ---
 
 <header id="header">
@@ -18,7 +19,7 @@ import Button from "../ui/Button.astro";
         </h1>
 
         <div id="mission-statement">
-            <h2>Our Mission</h2>
+            <Heading tagName="h2" size="h2">Our Mission</Heading>
             <p>Is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
             <Button href="/donate">Donate To Our Mission</Button>
         </div>

@@ -1,0 +1,56 @@
+---
+const headingOptions = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    h4: "h4",
+    h5: "h5",
+    h6: "h6",
+};
+
+type Props = {
+    tagName: keyof typeof headingOptions;
+    size: keyof typeof headingOptions;
+}
+
+const { tagName, size } = Astro.props;
+const Tag = tagName;
+---
+
+<Tag class:list={["default", headingOptions[size]]}>
+    <slot />
+</Tag>
+
+<style>
+
+    :root {
+        --h0: 1;
+        --h1: 1.8rem;
+        --h2: 1.65rem;
+        --h3: 1.4rem;
+        --h4: 1rem;
+        --h5: 0.85rem;
+        --h6: 0.75rem;
+    }
+    .default {
+        line-height: 1.1;
+    }
+    .h1 {
+        font-size: var(--h1);
+    }
+    .h2 {
+        font-size: var(--h2);
+    }
+    .h3 {
+        font-size: var(--h3);
+    }
+    .h4 {
+        font-size: var(--h4);
+    }
+    .h5 {
+        font-size: var(--h5);
+    }
+    .h6 {
+        font-size: var(--h6);
+    }
+</style>
