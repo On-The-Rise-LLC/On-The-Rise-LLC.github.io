@@ -1,0 +1,38 @@
+---
+import Heading from "../components/ui/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "What To Expect From Us";
+---
+
+<BaseLayout title={pageTitle}>
+    <Heading tagName="h2" size="h1">{pageTitle}</Heading>
+    <p>At On The Rise Foundation, we strive to provide a seamless and supportive experience for individuals seeking our services. Here's what you can expect when you embark on your journey with us:</p>
+
+    <ol>
+        <li>Free 15-Minute Intake Call: Our services kick off with a complimentary 15-minute intake call to ensure that we are the right fit for your needs. This initial conversation allows us to understand your situation and determine how we can best support you.</li>
+
+        <li>55-Minute Consultation Appointment: Following the intake call, you will have a 55-minute consultation appointment, either in person or via telehealth. During this session, our consultants will delve deeper into your needs, goals, and challenges to develop a personalized plan of action.</li>
+
+        <li>Reach and Discovery: After the consultation, our consultants will conduct a reach and discovery process to explore the services available to you. This may involve checking insurance coverage or reaching out to different providers in the area to find the best options for your specific needs.</li>
+
+        <li>Follow-Up Appointment: Once the reach and discovery process is complete, we will schedule a follow-up appointment to review the findings and discuss the next steps forward. This appointment allows us to ensure that you are receiving the services and support that align with your goals and preferences.</li>
+    </ol>
+
+    <p>At On The Rise Foundation, we are committed to guiding you through a comprehensive and tailored journey towards accessing the services you need. Our step-by-step process is designed to ensure that you receive the personalized care and support that will help you thrive. We look forward to partnering with you on your path to wellness and empowerment.</p>
+
+    <Heading tagName="h3" size="h2">Fee Schedule</Heading>
+    <ul>
+        <li>15 Minute Intake - Free</li>
+        <li>55 Minute Consultation - $65</li>
+        <li>60 Minutes Case Discovery- $50</li>
+        <li>55 Minute Follow Up and Review -$75</li>
+    </ul>
+
+    <Heading tagName="h3" size="h2">Reduced Rate</Heading>
+    <p>At On The Rise Foundation, our mission is to ensure that services are affordable and accessible to all individuals. Thanks to the support of our donors and community partners, we are able to provide scholarships for those who require financial assistance. If you are unable to afford the full rate, please don't hesitate to inquire about our scholarship application process and reduced rates. We are here to help you.</p>
+
+    <Heading tagName="h3" size="h2">Cancellations</Heading>
+    <p>Please give at least 48 hour notice for any cancellations. We reserve the right to charge the full fee for appointments missed without sufficient notice.</p>
+
+</BaseLayout>

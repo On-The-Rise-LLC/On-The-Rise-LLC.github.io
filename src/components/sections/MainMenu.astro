@@ -6,30 +6,21 @@ const mainMenu = [
         class: ""
     },
     {
-        title: "Test 1",
-        link: "#",
+        title: "About Us",
+        link: "/about-us",
         class: ""
     },
     {
-        title: "Test 2",
-        link: "#",
-        class: ""
-    },
-    {
-        title: "Test 3",
-        link: "#",
-        class: ""
-    },
-    {
-        title: "Test 4",
-        link: "#",
+        title: "What To Expect From Us",
+        link: "/what-to-expect",
         class: ""
     }
 ]
 const urlPathname = Astro.url.pathname;
+console.log(urlPathname);
 
 mainMenu.map (menuItem => ((
-    menuItem.link === urlPathname ? menuItem.class = "current-page" : ""
+    menuItem.link == urlPathname ? menuItem.class = "current-page" : ""
 )));
 ---
 
@@ -163,7 +154,7 @@ mainMenu.map (menuItem => ((
         margin: 0;
         padding: 0;
     }
-    @media (min-width: 800px) {
+    @media (min-width: 500px) {
         .nav-toggle-label-wrap .nav-toggle {
             display: none;
         }
