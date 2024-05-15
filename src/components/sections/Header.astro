@@ -3,46 +3,59 @@ import { Picture } from "astro:assets";
 import logoImg from "../../images/on-the-rise-foundation-logo.png";
 import Button from "../ui/Button.astro";
 import Heading from "../ui/Heading.astro";
+import MainMenu from "./MainMenu.astro";
+
+
 ---
 
-<header id="header">
-    <div class="hero">
-        <h1>
-            <a href="/">
-                <Picture
-                    src={logoImg}
-                    widths={[260, 300, 325, logoImg.width]}
-                    sizes={`(max-width: 320px) 260px, (max-width: 345px) 300px, (max-width: 370px) 325px, ${logoImg.width}px`}
-                    alt="On the Rise Foundation Fall into Your New Beginning"
-                />
-            </a>
-        </h1>
+<header class="header">
+    <div class="wrap">
+        <div class="hero">
+            <h1>
+                <a href="/">
+                    <Picture
+                        src={logoImg}
+                        widths={[260, 300, 325, logoImg.width]}
+                        sizes={`(max-width: 320px) 260px, (max-width: 345px) 300px, (max-width: 370px) 325px, ${logoImg.width}px`}
+                        alt="On the Rise Foundation Fall into Your New Beginning"
+                    />
+                </a>
+            </h1>
 
-        <div id="mission-statement">
-            <Heading tagName="h2" size="h2">Our Mission</Heading>
-            <p>Is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
-            <Button href="/donate">Donate To Our Mission</Button>
+            <div id="mission-statement">
+                <Heading tagName="h2" size="h2">Our Mission</Heading>
+                <p>Is to empower families by providing comprehensive support and resources to ensure equal opportunities for accommodations in school and work environments.</p>
+                <Button href="/donate">Donate To Our Mission</Button>
+            </div>
         </div>
+        <MainMenu />
     </div>
 </header>
 
 <style>
-    #header {
+    .header {
         background-color: var(--secoundary-background-color);
-        padding: var(--header-footer-padding);
+        padding:  var(--spacing-md) 0;
+    }
+    header .wrap {
+        max-width: var(--page-width);
+        margin-inline: auto;
     }
     header .hero {
         margin-left: auto;
         margin-right: auto;
+        padding: 0 var(--spacing-md);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: var(--spacing-md);
     }
+    header .hero h1 {
+        margin: 0;
+    }
     @media (min-width: 800px) {
         header .hero {
-            max-width: var(--page-width);
             flex-direction: row;
             gap: var(--spacing-xl);
         }

@@ -14,9 +14,10 @@ const { href, variant = "primary", ...rest } = Astro.props;
 
 <style>
     .btn {
-        text-transform: capitalize;
     }
     .btn {
+        display: inline-block;
+        text-transform: capitalize;
         background-color: var(--cta-color);
         color: var(--background-color);
         --tw-ring-color: var(--cta-color);
@@ -32,8 +33,6 @@ const { href, variant = "primary", ...rest } = Astro.props;
         padding: var(--spacing-sm) var(--spacing-lg);
         border-radius: var(--border-radius);
         margin-top: var(--spacing-sm);
-        margin-right: var(--spacing-xs);
-        margin-left: var(--spacing-xs);
         text-transform: none;
         text-decoration: none;
     }

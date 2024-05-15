@@ -1,0 +1,199 @@
+---
+const mainMenu = [
+    {
+        title: "Home",
+        link: "/",
+        class: ""
+    },
+    {
+        title: "Test 1",
+        link: "#",
+        class: ""
+    },
+    {
+        title: "Test 2",
+        link: "#",
+        class: ""
+    },
+    {
+        title: "Test 3",
+        link: "#",
+        class: ""
+    },
+    {
+        title: "Test 4",
+        link: "#",
+        class: ""
+    }
+]
+const urlPathname = Astro.url.pathname;
+
+mainMenu.map (menuItem => ((
+    menuItem.link === urlPathname ? menuItem.class = "current-page" : ""
+)));
+---
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<div class="nav-toggle-label-wrap">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span class="nav-toggel-label-hamburger"></span>
+        <span class="nav-toggel-label-text">Menu</span>
+    </label>
+</div>
+<nav id="main-menu" class="main-menu">
+    <ul>
+        {mainMenu.map( menuItem => ((
+            <li class:list={[menuItem.class, "focus-within"]}><a href={menuItem.link}>{menuItem.title}</a></li>
+        )))}
+    </ul>
+</nav>
+
+<style>
+    .nav-toggle {
+        display: none;
+    }
+    .nav-toggle:checked ~ nav {
+        transform: scale(1, 1);
+    }
+    .nav-toggle:checked ~ nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+    .nav-toggle-label-wrap {
+        margin-top: var(--spacing-sm);
+    }
+    .nav-toggle-label-wrap .nav-toggle-label {
+        padding: var(--spacing-md);
+        display: flex;
+        gap: var(--spacing-sm);
+        color: var(--background-color);
+        font-weight: bold;
+        line-height: 0.35rem;
+        transition: color 250ms ease-in-out;
+    }
+    .nav-toggle-label-wrap .nav-toggle-label:hover {
+        cursor: pointer;
+        color: var(--cta-color);
+        transition: color 250ms ease-in-out;
+    }
+    .nav-toggle-label-wrap .nav-toggle-label:hover .nav-toggel-label-hamburger,
+    .nav-toggle-label-wrap .nav-toggle-label:hover .nav-toggel-label-hamburger::before,
+    .nav-toggle-label-wrap .nav-toggle-label:hover .nav-toggel-label-hamburger::after {
+        background-color: var(--cta-color);
+        transition: background-color 250ms ease-in-out;
+    }
+    .nav-toggle-label .nav-toggel-label-hamburger-wrap{
+        display: inline-block;
+    }
+    .nav-toggle-label .nav-toggel-label-hamburger,
+    .nav-toggle-label .nav-toggel-label-hamburger::before,
+    .nav-toggle-label .nav-toggel-label-hamburger::after {
+        display: block;
+        background: var(--background-color);
+        height: 2px;
+        width: 1.25em;
+        border-radius: 2px;
+        position: relative;
+        transition: background-color 250ms ease-in-out;
+    }
+    .nav-toggle-label .nav-toggel-label-hamburger::before,
+    .nav-toggle-label .nav-toggel-label-hamburger::after {
+        content: "";
+        position: absolute;
+    }
+    .nav-toggle-label .nav-toggel-label-hamburger::before {
+        bottom: 7px;
+    }
+    .nav-toggle-label .nav-toggel-label-hamburger::after {
+        top: 7px;
+    }
+    .nav-toggel-label .nav-toggel-label-text {
+        
+    }
+    .main-menu {
+        position: fixed;
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 400ms ease-in-out;
+    }
+    .main-menu:focus-within,
+    .main-menu:focus {
+        transform: scale(1, 1);
+    }
+    .main-menu:focus-within a { 
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+        z-index: 999;
+    }
+    .main-menu li {
+        background: var(--secoundary-background-color);
+    }
+    .main-menu .current-page {
+        background-color: var(--cta-color);
+        transition: background-color 250ms ease-in-out;
+    }
+    .main-menu .current-page:hover,
+    .main-menu .current-page:focus-within {
+        background-color: var(--background-color);
+        transition: background-color 250ms ease-in-out;
+    }
+    .main-menu a {
+        display: block;
+        padding: var(--spacing-md);
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--background-color);
+        opacity: 0;
+        transition: opacity 150ms ease-in-out,
+                    color 250ms ease-in-out;
+    }
+    .main-menu a:hover,
+    .main-menu a:focus-visible {
+        color: var(--cta-color);
+        transition: color 250ms ease-in-out;
+        outline-offset: -5px;
+    }
+    .main-menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+    @media (min-width: 800px) {
+        .nav-toggle-label-wrap .nav-toggle {
+            display: none;
+        }
+        .nav-toggle-label-wrap .nav-toggle-label {
+            display: none;
+        }
+        .main-menu {
+            position: relative;
+            display: block;
+            margin-top: var(--spacing-sm);
+            padding: 0 var(--spacing-md);
+            transform: none;
+        }
+        .main-menu li {
+            border-radius: var(--border-radius);
+            line-height: 1rem;
+        }
+        .main-menu .current-page {
+        }
+        .main-menu a {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            opacity: 1;
+        }
+        .main-menu a:focus-visible {
+            border-radius: var(--border-radius);
+            outline-offset: 3px;
+        }
+        .main-menu ul {
+            flex-direction: row;
+            gap: var(--spacing-md);
+        }
+    }
+</style>
