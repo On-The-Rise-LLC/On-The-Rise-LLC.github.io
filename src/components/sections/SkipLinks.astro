@@ -3,12 +3,13 @@
 ---
 
 <a href="#mission-statement" class="skip-links">Skip to mission statement</a>
-<a href="#main" class="skip-links">Skip to about us</a>
-<a href="#stay-up-to-date" class="skip-links">Skip to stay up to date on our launch</a>
+<a href="#main-menu" class="skip-links">Skip to site navigation</a>
+<a href="#main" class="skip-links">Skip to main content</a>
 <a href="#footer" class="skip-links">Skip to social media links</a>
 
 <style>
     .skip-links {
+        padding: var(--spacing-sm);
         position: absolute;
         left: -10000px;
         top: auto;
@@ -18,10 +19,12 @@
         background-color: var(--cta-color);
         color: var(--background-color);
     }
-    .skip-links:focus {
+    .skip-links:focus-visible {
         position: static;
         width: 100%;
         height: auto;
         display: block;
+        outline-color: var(--background-color);
+        outline-offset: -2px;
     }
 </style>
