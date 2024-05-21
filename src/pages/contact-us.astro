@@ -1,0 +1,117 @@
+---
+import Button from "../components/ui/Button.astro";
+import Heading from "../components/ui/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Contact Us";
+---
+
+<BaseLayout title={pageTitle}>
+    <Heading tagName="h2" size="h1">{pageTitle}</Heading>
+    <p>
+        We are happy to receive inquiries regarding our services. However, please note that we do not provide consultation, treatment, assessment, or any other professional services via email.
+    </p>
+    <form
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        name="contact-us"
+        method="POST"
+        action="/contact-success"
+    >
+        <p class="hidden" aria-hidden="true">
+            <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+        </p>
+        <input type="hidden" name="form-name" value="contact-us" />
+        <div class="name">
+            <div class="first-name form-element">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" name="first-name" required />
+            </div>
+            <div class="last-name form-element">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" name="last-name" required />
+            </div>
+        </div>
+        <div class="phone form-element">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" required />
+        </div>
+        <div class="email form-element">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+        </div>
+        <fieldset>
+            <legend>Preferred Method Of Contact </legend>
+            <div class="preferred-contact">
+                <div class="preferred-phone form-element">
+                    <input id="preferred-phone" type="radio" name="preferred-contact" value="Phone">
+                    <label for="preferred-phone">Phone</label>
+                </div>
+                <div class="preferred-email form-element">
+                    <input id="preferred-email" type="radio" name="preferred-contact" value="Email">
+                    <label for="preferred-email">Email</label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="message form-element">
+            <label for="message">Message</label>
+            <textarea id="message" wrap="soft" name="message" rows="5" required></textarea>
+        </div>
+        <div class="consent form-element">
+            <input id="consent" type="checkbox" name="consent" value="Yes" required>
+            <label for="consent">I agree to be contacted by On The Rise Foundation</label>
+        </div>
+        <Button tagName="button" type="submit">Submit</Button>
+    </form>
+</BaseLayout>
+
+<style>
+    input,
+    fieldset,
+    textarea {
+        border-radius: var(--border-radius);
+    }
+    .hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+    .form-element {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    .form-element:has(
+        input[type="radio"],
+        input[type="checkbox"]
+    ) {
+        flex-direction: row;
+        accent-color: var(--cta-color);
+        mix-blend-mode: multiply;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    form .name {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    form .preferred-contact {
+        display: flex;
+        gap: var(--spacing-sm)
+    }
+    @media (min-width: 500px) {
+        form .name {
+            flex-direction: row;
+        }
+    }
+</style>

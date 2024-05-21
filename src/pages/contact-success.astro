@@ -1,0 +1,13 @@
+---
+import Heading from "../components/ui/Heading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/ui/Button.astro";
+
+const pageTitle = "Thank You For Your Submission!"
+---
+
+<BaseLayout title={pageTitle}>
+    <Heading tagName="h2" size="h1">{pageTitle}</Heading>
+    <p>Please allow up to 5 business days for response.</p>
+    <Button tagName="a" href="/">Go Back To Home</Button>
+</BaseLayout>
