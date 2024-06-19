@@ -6,5 +6,13 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.ontherisefoundation.com",
-  integrations: [icon(), sitemap(), robotsTxt()]
+  integrations: [
+    icon({
+      include: {
+        "fa6-brands": ["facebook", "tiktok"]
+      }
+    }),
+    sitemap(),
+    robotsTxt()
+  ],
 });
