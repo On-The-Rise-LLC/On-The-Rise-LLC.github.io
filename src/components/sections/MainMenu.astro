@@ -19,6 +19,11 @@ const mainMenu = [
         title: "Contact Us",
         link: "/contact-us",
         class: ""
+    },
+    {
+        title: "Client Portal",
+        link: "https://ontherisefoundation.clientsecure.me",
+        class: ""
     }
 ]
 const urlPathname = Astro.url.pathname;
@@ -159,7 +164,7 @@ mainMenu.map (menuItem => ((
         margin: 0;
         padding: 0;
     }
-    @media (min-width: 500px) {
+    @media (min-width: 580px) {
         .nav-toggle-label-wrap .nav-toggle {
             display: none;
         }
